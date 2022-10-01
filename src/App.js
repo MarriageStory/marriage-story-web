@@ -1,15 +1,19 @@
-import React from 'reac'
-// import Navigator from './components/Navigator'
-// import Paperbase from './components/Paperbase'
-import Login from './pages/login/Login'
+import React from 'react'
+import { Routes, Route, BrowserRouter } from 'react-router-dom'
+// import Login from './pages/login/Login'
+import Navigator from './components/Navigator'
+import Paperbase from './components/Paperbase'
+
 
 function App() {
   return (
-    <div >
-      <Login />
-      {/* <Navigator />
-      <Paperbase /> */}
-    </div>
+    <BrowserRouter>
+      <Routes>
+        {/* <Login /> */}
+        < Navigator />
+        <Paperbase />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
