@@ -59,7 +59,7 @@ theme = {
         MuiDrawer: {
             styleOverrides: {
                 paper: {
-                    backgroundColor: '#081627',
+                    backgroundColor: '#FB5490',
                 },
             },
         },
@@ -128,7 +128,7 @@ theme = {
             styleOverrides: {
                 root: {
                     '&.Mui-selected': {
-                        color: '#4fc3f7',
+                        color: '#FB5490',
                     },
                 },
             },

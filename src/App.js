@@ -1,11 +1,14 @@
-import Navigator from './components/Navigator'
-import Paperbase from './components/Paperbase'
+import React from 'reac'
+// import Navigator from './components/Navigator'
+// import Paperbase from './components/Paperbase'
+import Login from './pages/login/Login'
 
 function App() {
   return (
     <div >
-      <Navigator />
-      <Paperbase />
+      <Login />
+      {/* <Navigator />
+      <Paperbase /> */}
     </div>
   );
 }

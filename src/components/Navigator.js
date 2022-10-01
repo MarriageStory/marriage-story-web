@@ -55,7 +55,7 @@ export default function Navigator(props) {
                     <img src="../assets/Title.png" alt="Marriage Story" />
                 </ListItem>
                 {categories.map(({ id, children }) => (
-                    <Box key={id} sx={{ bgcolor: '#101F33' }}>
+                    <Box key={id} sx={{ bgcolor: '#FBC0C0' }}>
                         <ListItem sx={{ py: 2, px: 3 }}>
                             <ListItemText sx={{ color: '#fff' }}>{id}</ListItemText>
                         </ListItem>
