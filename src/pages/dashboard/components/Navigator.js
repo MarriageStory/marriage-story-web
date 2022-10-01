@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
@@ -17,12 +18,8 @@ const categories = [
     {
         id: 'Action',
         children: [
-            {
-                id: 'Profile',
-                icon: <PeopleIcon />,
-                active: true,
-            },
-            { id: 'Client', icon: <DnsRoundedIcon /> },
+            { id: 'Profile', icon: <PeopleIcon /> },
+            { id: 'Client', icon: <DnsRoundedIcon />, active: true },
             { id: 'Setting', icon: <SettingsIcon /> },
             { id: 'Analytics', icon: <PublicIcon /> },
             { id: 'Signout', icon: <AccountCircle /> },
@@ -48,6 +45,12 @@ const itemCategory = {
 export default function Navigator(props) {
     const { ...other } = props;
 
+    const navigate = useNavigate();
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        navigate("/");
+    };
+
     return (
         <Drawer variant="permanent" {...other}>
             <List disablePadding>
@@ -67,7 +70,6 @@ export default function Navigator(props) {
                                 </ListItemButton>
                             </ListItem>
                         ))}
-
                         <Divider sx={{ mt: 2 }} />
                     </Box>
                 ))}

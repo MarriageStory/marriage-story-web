@@ -1,4 +1,7 @@
 import * as React from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -29,13 +32,52 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function Login() {
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        console.log({
-            email: data.get('email'),
-            password: data.get('password'),
+    // const handleSubmit = (event) => {
+    //     event.preventDefault();
+    //     const data = new FormData(event.currentTarget);
+    //     console.log({
+    //         email: data.get('email'),
+    //         password: data.get('password'),
+    //     });
+    // };
+
+    const [user, setUser] = useState({
+        email: "",
+        password: "",
+    });
+
+    const navigate = useNavigate();
+
+    const handleInput = (e) => {
+        setUser({
+            ...user,
+            [e.target.name]: e.target.value,
         });
+    };
+
+    const handleClick = () => {
+        // LOGIN TANPA API
+        if (user.username === "admin" && user.password === "adminA3") {
+            localStorage.setItem("token", 123);
+            navigate("/dashboard");
+        } else {
+            alert("Login gagal");
+        }
+
+        // LOGIC TANPA REQUEST API
+        // const requestBody = { email: user.email, password: user.password };
+        // axios
+        //     .post(`http://localhost:8000/api/auth/login`, requestBody)
+        //     .then((res) => {
+        //         console.log(res);
+        //         alert("login berhasil");
+        //         localStorage.setItem("token", res.data.token);
+        //         navigate("/dashboard");
+        //     })
+        //     .catch((err) => {
+        //         console.log(err);
+        //         alert("login gagal", err);
+        //     });
     };
 
     return (
@@ -73,7 +115,7 @@ export default function Login() {
                         <Typography component="h1" variant="h5">
                             Sign in
                         </Typography>
-                        <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+                        <Box component="form" noValidate sx={{ mt: 1 }}>
                             <TextField
                                 margin="normal"
                                 required
@@ -83,6 +125,7 @@ export default function Login() {
                                 name="email"
                                 autoComplete="email"
                                 autoFocus
+                                onChange={handleInput}
                             />
                             <TextField
                                 margin="normal"
@@ -93,12 +136,14 @@ export default function Login() {
                                 type="password"
                                 id="password"
                                 autoComplete="current-password"
+                                onChange={handleInput}
                             />
                             <FormControlLabel
                                 control={<Checkbox value="remember" color="primary" />}
                                 label="Remember me"
                             />
                             <Button
+                                onClick={handleClick}
                                 type="submit"
                                 fullWidth
                                 variant="contained"
