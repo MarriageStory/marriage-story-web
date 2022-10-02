@@ -19,7 +19,7 @@ const categories = [
         id: 'Action',
         children: [
             { id: 'Profile', icon: <PeopleIcon /> },
-            { id: 'Client', icon: <DnsRoundedIcon />, active: true },
+            { id: 'Client', icon: <DnsRoundedIcon /> },
             { id: 'Setting', icon: <SettingsIcon /> },
             { id: 'Analytics', icon: <PublicIcon /> },
             { id: 'Signout', icon: <AccountCircle /> },
@@ -60,7 +60,7 @@ export default function Navigator(props) {
                 {categories.map(({ id, children }) => (
                     <Box key={id} sx={{ bgcolor: '#FBC0C0' }}>
                         <ListItem sx={{ py: 2, px: 3 }}>
-                            <ListItemText sx={{ color: '#fff' }}>{id}</ListItemText>
+                            <ListItemText sx={{ color: '#202124' }}>{id}</ListItemText>
                         </ListItem>
                         {children.map(({ id: childId, icon, active }) => (
                             <ListItem disablePadding key={childId}>
