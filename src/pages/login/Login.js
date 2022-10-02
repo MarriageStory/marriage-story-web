@@ -32,14 +32,14 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function Login() {
-    // const handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     const data = new FormData(event.currentTarget);
-    //     console.log({
-    //         email: data.get('email'),
-    //         password: data.get('password'),
-    //     });
-    // };
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const data = new FormData(event.currentTarget);
+        console.log({
+            email: data.get('email'),
+            password: data.get('password'),
+        });
+    };
 
     const [user, setUser] = useState({
         email: "",
@@ -57,7 +57,7 @@ export default function Login() {
 
     const handleClick = () => {
         // LOGIN TANPA API
-        if (user.username === "admin" && user.password === "adminA3") {
+        if (user.email === "admin" && user.password === "adminA3") {
             localStorage.setItem("token", 123);
             navigate("/dashboard");
         } else {
@@ -115,7 +115,7 @@ export default function Login() {
                         <Typography component="h1" variant="h5">
                             Sign in
                         </Typography>
-                        <Box component="form" noValidate sx={{ mt: 1 }}>
+                        <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
                             <TextField
                                 margin="normal"
                                 required
