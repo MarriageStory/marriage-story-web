@@ -9,16 +9,20 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import HomeIcon from '@mui/icons-material/Home';
+import PeopleIcon from '@mui/icons-material/People';
 import DnsRoundedIcon from '@mui/icons-material/DnsRounded';
+import PublicIcon from '@mui/icons-material/Public';
+import SettingsIcon from '@mui/icons-material/Settings';
 import { AccountCircle } from '@mui/icons-material';
 
 const categories = [
     {
-        id: 'Menu',
+        id: 'Action',
         children: [
-            { id: 'Home', icon: <HomeIcon /> },
-            { id: 'Clients', icon: <DnsRoundedIcon /> },
+            { id: 'Profile', icon: <PeopleIcon /> },
+            { id: 'Client', icon: <DnsRoundedIcon /> },
+            { id: 'Setting', icon: <SettingsIcon /> },
+            { id: 'Analytics', icon: <PublicIcon /> },
             { id: 'Signout', icon: <AccountCircle /> },
         ],
     },
@@ -54,11 +58,6 @@ export default function Navigator(props) {
     return (
         <Drawer variant="permanent" {...other}>
             <List disablePadding>
-<<<<<<< HEAD
-                <ListItem sx={{ ...item, ...itemCategory, fontSize: 22, color: '#fff' }}>
-                    <img src="../assets/marriagelogo.png" alt="Marriage Story" />
-                </ListItem>
-=======
                 <ListItemButton sx={{ ...item, ...itemCategory, fontSize: 22, color: '#fff' }}>
                     <img src="../../../../public/assets/img/Title.png" alt="Marriage Story" />
                 </ListItemButton>
@@ -69,7 +68,6 @@ export default function Navigator(props) {
                         primary="Marriage Story"
                     />
                 </ListItemButton> */}
->>>>>>> 08befc54597db7f516679e99a530a870dae760af
                 {categories.map(({ id, children }) => (
                     <Box key={id} sx={{ bgcolor: '#FBC0C0' }}>
                         <ListItem sx={{ py: 2, px: 3 }}>
