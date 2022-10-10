@@ -60,7 +60,7 @@ export default function Navigator(props) {
                 </ListItem>
 =======
                 <ListItemButton sx={{ ...item, ...itemCategory, fontSize: 22, color: '#fff' }}>
-                    <img src="../assets/Title.png" alt="Marriage Story" />
+                    <img src="../../../../public/assets/img/Title.png" alt="Marriage Story" />
                 </ListItemButton>
                 {/* <ListItemButton component="a" href="#">
                     <ListItemIcon sx={{ fontSize: 20 }}>🔥</ListItemIcon>
