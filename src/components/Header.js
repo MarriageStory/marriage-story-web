@@ -22,7 +22,7 @@ function Header(props) {
 
     return (
         <React.Fragment>
-            {/* <AppBar color="primary" position="sticky" elevation={0}>
+            <AppBar color="primary" position="sticky" elevation={0}>
                 <Toolbar>
                     <Grid container spacing={1} alignItems="center">
                         <Grid sx={{ display: { sm: 'none', xs: 'block' } }} item>
@@ -36,7 +36,7 @@ function Header(props) {
                             </IconButton>
                         </Grid>
                         <Grid item xs />
-                        <Grid item>
+                        {/* <Grid item>
                             <Link
                                 href="/"
                                 variant="body2"
@@ -64,10 +64,10 @@ function Header(props) {
                             <IconButton color="inherit" sx={{ p: 0.5 }}>
                                 <Avatar src="/static/images/avatar/1.jpg" alt="My Avatar" />
                             </IconButton>
-                        </Grid>
+                        </Grid> */}
                     </Grid>
                 </Toolbar>
-            </AppBar> */}
+            </AppBar>
             <AppBar
                 component="div"
                 color="primary"
@@ -78,8 +78,8 @@ function Header(props) {
                 <Toolbar>
                     <Grid container alignItems="center" spacing={1}>
                         <Grid item xs>
-                            <Typography color="inherit" variant="h5" component="h1">
-                                Profile
+                            <Typography color="inherit" variant="h7" component="h1">
+                                Dashboard
                             </Typography>
                         </Grid>
                         <Grid item>
