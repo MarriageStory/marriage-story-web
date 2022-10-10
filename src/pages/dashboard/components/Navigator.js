@@ -8,20 +8,16 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import PeopleIcon from '@mui/icons-material/People';
+import HomeIcon from '@mui/icons-material/Home';
 import DnsRoundedIcon from '@mui/icons-material/DnsRounded';
-import PublicIcon from '@mui/icons-material/Public';
-import SettingsIcon from '@mui/icons-material/Settings';
 import { AccountCircle } from '@mui/icons-material';
 
 const categories = [
     {
-        id: 'Action',
+        id: 'Menu',
         children: [
-            { id: 'Profile', icon: <PeopleIcon /> },
-            { id: 'Client', icon: <DnsRoundedIcon /> },
-            { id: 'Setting', icon: <SettingsIcon /> },
-            { id: 'Analytics', icon: <PublicIcon /> },
+            { id: 'Home', icon: <HomeIcon /> },
+            { id: 'Clients', icon: <DnsRoundedIcon /> },
             { id: 'Signout', icon: <AccountCircle /> },
         ],
     },
@@ -55,7 +51,7 @@ export default function Navigator(props) {
         <Drawer variant="permanent" {...other}>
             <List disablePadding>
                 <ListItem sx={{ ...item, ...itemCategory, fontSize: 22, color: '#fff' }}>
-                    <img src="../assets/Title.png" alt="Marriage Story" />
+                    <img src="../assets/marriagelogo.png" alt="Marriage Story" />
                 </ListItem>
                 {categories.map(({ id, children }) => (
                     <Box key={id} sx={{ bgcolor: '#FBC0C0' }}>

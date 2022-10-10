@@ -37,23 +37,6 @@ function Header(props) {
                         </Grid>
                         <Grid item xs />
                         <Grid item>
-                            <Link
-                                href="/"
-                                variant="body2"
-                                sx={{
-                                    textDecoration: 'none',
-                                    color: lightColor,
-                                    '&:hover': {
-                                        color: 'common.white',
-                                    },
-                                }}
-                                rel="noopener noreferrer"
-                                target="_blank"
-                            >
-                                Go to docs
-                            </Link>
-                        </Grid>
-                        <Grid item>
                             <Tooltip title="Alerts • No alerts">
                                 <IconButton color="inherit">
                                     <NotificationsIcon />
@@ -79,7 +62,7 @@ function Header(props) {
                     <Grid container alignItems="center" spacing={1}>
                         <Grid item xs>
                             <Typography color="inherit" variant="h5" component="h1">
-                                Profile
+                                Home
                             </Typography>
                         </Grid>
                         <Grid item>
@@ -101,14 +84,6 @@ function Header(props) {
                         </Grid>
                     </Grid>
                 </Toolbar>
-            </AppBar>
-            <AppBar component="div" position="static" elevation={0} sx={{ zIndex: 0 }}>
-                <Tabs value={0} textColor="inherit">
-                    <Tab label="Users" />
-                    <Tab label="Sign-in method" />
-                    <Tab label="Templates" />
-                    <Tab label="Usage" />
-                </Tabs>
             </AppBar>
         </React.Fragment>
     );
