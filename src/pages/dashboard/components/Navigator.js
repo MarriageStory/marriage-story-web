@@ -42,7 +42,6 @@ const itemCategory = {
 export default function Navigator(props) {
     const { ...other } = props;
 
-
     //Logout logic start
     const navigate = useNavigate();
     const handleLogout = () => {
