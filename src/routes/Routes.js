@@ -14,9 +14,3 @@ export function PublicRoute({ children }) {
     const auth = useAuth();
     return auth ? <Navigate to="/dashboard" /> : children;
 }
-
-// User bisa masuk ke Public Route tanpa login
-export function ClientsRoute({ children }) {
-    const auth = useAuth();
-    return auth ? <Navigate to="/clients" /> : children;
-}
