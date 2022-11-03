@@ -4,9 +4,9 @@ import Content from './components/Content'
 const Dashboard = () => {
     return (
         <div>
-            <h5>
+            <h2>
                 Dashboard
-            </h5>
+            </h2>
             <Content />
         </div>
     )

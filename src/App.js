@@ -30,7 +30,7 @@ function App() {
                 <Dashboard />
               </PrivateRoute>} />
           <Route
-            path="/client"
+            path="/clients"
             element={
               <PrivateRoute>
                 <Appbar />
