@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Paper from '@mui/material/Paper';
@@ -22,11 +23,17 @@ function createData(name, email, address, client, id) {
 }
 
 const rows = [
-    createData('Rasdhan WO', 159, 6.0, 24, 4.0),
-    createData('Dhimaz WO', 237, 9.0, 37, 4.3),
+    createData('Rasdhan WO', 'rasdhanWedding158@gmail.com', 'Jl. Darmawangsa Blok. C', 4, 1),
+    createData('Dhimaz WO', 'rahayuWeddingOrgz@gmail.com', 'Perum Surya Sejahtera C/2', 7, 2),
 ];
 
 const Content = () => {
+    const navigate = useNavigate();
+
+    const handleAddNew = () => {
+        navigate("/");
+    }
+
     return (
         <div>
             <Paper sx={{ maxWidth: 936, margin: 'auto', overflow: 'hidden' }}>
@@ -53,8 +60,8 @@ const Content = () => {
                                 />
                             </Grid>
                             <Grid item>
-                                <Button variant="contained" sx={{ mr: 1 }}>
-                                    Add user
+                                <Button variant="contained" sx={{ mr: 1 }} onClick={handleAddNew} >
+                                    Add New
                                 </Button>
                                 <Tooltip title="Reload">
                                     <IconButton>
@@ -90,10 +97,10 @@ const Content = () => {
                                         <TableCell align="right">{row.client}</TableCell>
                                         <TableCell align="right">{row.id}</TableCell>
                                         <TableCell align="center">
-                                            <Button variant="contained" sx={{ mr:1 }}>
+                                            <Button variant="outlined" sx={{ mr: 1 }}>
                                                 Delete
                                             </Button>
-                                            <Button variant="contained">
+                                            <Button variant="outlined">
                                                 Edit
                                             </Button>
                                         </TableCell>
