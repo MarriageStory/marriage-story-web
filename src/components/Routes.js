@@ -5,8 +5,11 @@
         halaman login padal udah login)
 */
 
-import Login from ".././pages/lojin/Login";
+import Login from ".././pages/login/Login";
 import Dashboard from ".././pages/dashboard/Dashboard";
+import Clients from ".././pages/clients/Clients";
+import Analytics from ".././pages/analytics/Analytics";
+import Profile from ".././pages/profile/Profile";
 
 export const APP_ROUTE = [
     {
@@ -21,6 +24,27 @@ export const APP_ROUTE = [
         path: "/dashboard",
         exact: true,
         component: Dashboard,
+        private: true,
+    },
+    {
+        name: "Clients",
+        path: "/clients",
+        exact: true,
+        component: Clients,
+        private: true,
+    },
+    {
+        name: "Analytics",
+        path: "/analytics",
+        exact: true,
+        component: Analytics,
+        private: true,
+    },
+    {
+        name: "Profile",
+        path: "/profile",
+        exact: true,
+        component: Profile,
         private: true,
     },
 ];
