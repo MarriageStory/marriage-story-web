@@ -16,7 +16,13 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
 
 function createData(name, email, address, client, id) {
     return { name, email, address, client, id };
@@ -31,18 +37,56 @@ const Content = () => {
     const navigate = useNavigate();
 
     const handleAddNew = () => {
-        navigate("/");
+        navigate("/form");
     }
 
     return (
         <div>
-            <Paper sx={{ maxWidth: 936, margin: 'auto', overflow: 'hidden' }}>
+            <Paper ariant="outlined" sx={{ maxWidth: 936, margin: 'auto', overflow: 'hidden' }}>
                 <AppBar
                     position="static"
                     color="default"
                     elevation={0}
                     sx={{ borderBottom: '1px solid rgba(0, 0, 0, 0.12)' }}
                 >
+                    <Card sx={{ maxWidth: 345 }}>
+                        <CardMedia
+                            component="img"
+                            height="140"
+                            image="/static/images/cards/contemplative-reptile.jpg"
+                            alt="Picture WO"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div">
+                                Rashdan WO
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur commodi neque facere tenetur debitis quisquam ab nesciunt perspiciatis doloribus recusandae!
+                            </Typography>
+                        </CardContent>
+                        <CardActions>
+                            <Button size="small">Show More</Button>
+                        </CardActions>
+                    </Card>
+                    {/* <Card sx={{ maxWidth: 345 }}>
+                        <CardMedia
+                            component="img"
+                            height="140"
+                            image="/static/images/cards/contemplative-reptile.jpg"
+                            alt="Picture WO"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div">
+                                Rashdan WO
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur commodi neque facere tenetur debitis quisquam ab nesciunt perspiciatis doloribus recusandae!
+                            </Typography>
+                        </CardContent>
+                        <CardActions>
+                            <Button size="small">Show More</Button>
+                        </CardActions>
+                    </Card> */}
                     <Toolbar>
                         <Grid container spacing={2} alignItems="center">
                             <Grid item>
@@ -51,7 +95,7 @@ const Content = () => {
                             <Grid item xs>
                                 <TextField
                                     fullWidth
-                                    placeholder="Search by email address, phone number, or user UID"
+                                    placeholder="Search by email, address, or user ID"
                                     InputProps={{
                                         disableUnderline: true,
                                         sx: { fontSize: 'default' },
@@ -97,11 +141,11 @@ const Content = () => {
                                         <TableCell align="right">{row.client}</TableCell>
                                         <TableCell align="right">{row.id}</TableCell>
                                         <TableCell align="center">
-                                            <Button variant="outlined" sx={{ mr: 1 }}>
-                                                Delete
+                                            <Button sx={{ mr: 1 }} size="small">
+                                                <DeleteIcon fontSize="small" />
                                             </Button>
-                                            <Button variant="outlined">
-                                                Edit
+                                            <Button size="small">
+                                                <EditIcon fontSize="small" />
                                             </Button>
                                         </TableCell>
                                     </TableRow>

@@ -7,6 +7,7 @@ import Appbar from './components/ResponsiveAppBar'
 import Client from "./pages/clients/Clients";
 import Analytics from "./pages/analytics/Analytics";
 import Profile from "./pages/profile/Profile";
+import Form from "./pages/dashboard/components/Form";
 import './App.css'
 
 
@@ -53,6 +54,15 @@ function App() {
               <PrivateRoute>
                 <Appbar />
                 <Profile />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/form"
+            element={
+              <PrivateRoute>
+                {/* <Appbar /> */}
+                <Form />
               </PrivateRoute>
             }
           />
